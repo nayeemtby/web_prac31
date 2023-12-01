@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Template Filters</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        li {
+            margin: 16px 24px;
+            font-size: 20px;
+            font-family: sans-serif;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Filters:</h1>
+    <ul>
+        <li>length of "{{myString}}" is {{ myString | length }}</li>
+        <li>{{myInt}} incremented by 5 = {{ myInt | add:"5" }}</li>
+        <li>addslashes to "{{ myString }}"  {{ myString | addslashes }}</li>
+        <li>capfirst to "{{ myString }}"  {{ myString | capfirst }}</li>
+        <li>truncatechars:6 to "{{ myString }}"  {{ myString | truncatechars:6 }}</li>
+        <li>truncatewords:2 to "{{ myLowerString }}"  {{ myLowerString | truncatewords:2 }}</li>
+        <li>striptags to "{{ myTaggedString }}"  {{ myTaggedString | striptags }}</li>
+        <li>lower to "{{ myString }}"  {{ myString | lower }}</li>
+        <li>center:"15" to "{{ myString }}"  "{{ myString | center:"15" }}"</li>
+        <li>cut:"ra" to "{{ myString }}"  "{{ myString | cut:"ra" }}"</li>
+        <li>Date: {{ myDate | date:"D d M Y" }}</li>
+        <li>Time: {{ myDate | time:"H:i" }}</li>
+        <li>Time since 1971 : {{ myUtc | timesince:myDate }}</li>
+        <li>default:"Value Nai" "{{ nonexistent | default:"Value Nai" }}"</li>
+        <li>dictsort:"age": {{ myDictList | dictsort:"age" }}</li>
+        <li>{{myInt}} is divisibleby:"3": {{ myInt | divisibleby:"3" }}</li>
+        <li>My String with special chars "{{ myStringSpecialChars }}" {{ myStringSpecialChars | escape }}</li>
+        <li>slugify "{{ myStringSpecialChars }}" {{ myStringSpecialChars | slugify }}</li>
+        <li>{{ myInt }} int filesizeformat: {{ myInt | filesizeformat }}</li>
+        <li>first of {{ myArr }} : {{ myArr | first }}</li>
+        <li>last of {{ myArr }} : {{ myArr | last }}</li>
+        <li>slice:":2" of {{ myArr }} : {{ myArr | slice:":2" }}</li>
+        <li>{{ myArr }} joined by "-" : {{ myArr | join:" - " }}</li>
+        <li>linenumbers : {{ myStringMultiline | linenumbers }}</li>
+        <li>title : {{ myLowerString | title }}</li>
+        <li>upper : {{ myLowerString | upper }}</li>
+        <li>wordcount : {{ myLowerString | wordcount }}</li>
+        <li>
+            unordered_list:
+            <ul>
+                {{ myNestedList | unordered_list }}
+            </ul>
+        </li>
+        <li>File size is {{ myInt }} byte{{ myInt | pluralize }}.</li>
+
+
+    </ul>
+
+</body>
+
+</html>
